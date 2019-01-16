@@ -1,0 +1,23 @@
+1. it depends on our need of the order of execution,
+we sometimes might want to use setImmediate instead of SetTimeout if
+we want the callback to run immeadiatley after IO event`s callbacks.
+
+2.if we use process.nexttick the function is stored in a priority queue which means after the V8 is free the that function will have first priority to be executed.
+while setimmediate is stored in a regular queue which means it will be executed as its order in event loop.
+process.nextTick is unique in that it is not part of the event loop,it 
+is processed after current operation completes and before event loop continues(including setImmediate).
+setImmediate on the other hand is part of the event loop and runs on the check phase of the event loop
+after IO event`s callbacks.
+3.
+ Node Js`s Core Modules:
+        
+stream
+timers
+http
+https
+querystring
+url
+os
+events
+buffer
+path

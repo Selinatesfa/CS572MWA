@@ -1,0 +1,2 @@
+- use BookLibrary
+-db.Books.insert({isbn:123,author[selina,samsom],student:feruze,returndate:3/3/2019,tags:game})

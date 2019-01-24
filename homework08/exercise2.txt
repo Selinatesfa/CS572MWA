@@ -1,0 +1,19 @@
+{
+"_id": objectID(),
+"ISBN": '',
+"keywords": ['',''],
+"students": {
+            "studentId" : '',
+            "chekcOutDate": ,
+            "returnDate": 
+            }
+
+
+}
+
+- regular index on ISBN
+db.books.createIdex({ISBN:1});
+- regular index on ISBN studentId
+db.books.createIdex({'students.studentId':1});
+- Multikey Index on isbn and keywords
+db.books.createIndex({isbn:1,keywords:1});

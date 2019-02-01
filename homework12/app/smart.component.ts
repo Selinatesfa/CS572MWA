@@ -8,7 +8,7 @@ import { LoggablePipe } from './loggable.pipe';
         <app-dumb [items]="sitems"></app-dumb>
       </p>
       <input #val (click)='0'  />
-      <p #dval (click)='0'>hhhh</p>
+      <p #dval (click)='0'>div element has been clicked</p>
       <p  >{{dval.innerHTML|loggable}} </p>
       <p >{{val.value|loggable}}</p>
    

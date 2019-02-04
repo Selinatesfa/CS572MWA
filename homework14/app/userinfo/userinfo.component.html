@@ -1,0 +1,42 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+  <div formGroupName="userData">
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" [(ngModel)]="signupuserdata.username" name="username" class="form-control" id="username"
+        formControlName="username">
+      <label for="lusername">Username</label>
+      <input type="text" [(ngModel)]="signupuserdata.lusername" name="lusername" class="form-control" id="lusername"
+        formControlName="lusername">
+    </div>
+    <div class="form-group">
+      <label for="email">E-Mail</label>
+      <input type="text" [(ngModel)]="signupuserdata.email" name="email" class="form-control" id="email"
+        formControlName="email">
+      <div *ngIf="!myForm.get('userData').get('email').valid">
+        Invalid Email
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" [(ngModel)]="signupuserdata.password" name="password" class="form-control" id="password"
+      formControlName="password"><br>
+    <label for="cpassword">Password</label>
+    <input type="password" [(ngModel)]="signupuserdata.cpassword" name="cpassword" class="form-control" id="cpassword"
+      formControlName="cpassword">
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
+</form>
+<form [formGroup]="mylgin" (ngSubmit)="onlogin()">
+  <div class="form-group">
+    <label for="lname">username</label>
+    <input type="text" [(ngModel)]="logindata.lname" name="lname" class="form-control" id="lname" formControlName="lname"
+      name="lname"><br>
+    <label for="lpass">Password</label>
+    <input type="password" [(ngModel)]="logindata.lpass" name="lpass" class="form-control" id="lpass" formControlName="lpass"
+      name="lpass">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!mylgin.valid">Submit</button>
+</form>
